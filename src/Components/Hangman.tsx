@@ -3,7 +3,7 @@ import { ReactElement } from 'react'
 const Hangman = ({bodyArr}: {bodyArr: ReactElement[]}) => {
   
   return (
-    <div className='w-45 h-100 border-l-4 border-t-4 relative translate-x-[-25%] border-[#0C120C]'>
+    <div className='w-45 h-100 border-l-4 border-t-4 relative translate-x-[-25%] border-[#0C120C] md:translate-x-[-50%] md:w-50'>
       <div className='w-[4px] h-12 bg-[#0C120C] absolute right-0'>
       </div>
       <div className='w-40 h-[4px] bg-[#0C120C] absolute left-0 bottom-0 -translate-x-[25%]'>
@@ -19,4 +19,4 @@ const Hangman = ({bodyArr}: {bodyArr: ReactElement[]}) => {
 }
 
 export default Hangman
-//translate-x-[0%] w-50
+//

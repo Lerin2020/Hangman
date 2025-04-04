@@ -6,7 +6,7 @@ interface WordProperties {
 
 const EndGame = ({wordProps}: {wordProps: WordProperties[]}) => {
   return (
-    <section className='flex gap-2 flex-col items-center w-[50vw] select-none mt-5'>
+    <section className='flex gap-2 flex-col items-center w-[50vw] select-none mt-5 md:w-[960px]'>
       {/* <p className='font-extrabold text-xl text-[1.5rem]'> Word </p> */}
       <div className='font-bold w-full flex justify-center items-center text-2xl'>
         {/* Hint: {wordProps[0].letter} */}
