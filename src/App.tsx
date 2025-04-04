@@ -23,7 +23,6 @@ const App = () => {
   const [word, setWord] = useState<string>('')
   const [bodyArr, setBodyArr] = useState<React.ReactElement[]>([<Head key = '0'/>, <Body key = '1'/>, <LArm key='2'/>, <RArm key = '3'/>, <LLeg key = '4'/>, <RLeg key = '5'/>])
   useEffect(() => {
-    setIsLoading(true)
     const fetchWord = async () => {
       abortController.current?.abort()
       abortController.current = new AbortController()
@@ -80,6 +79,7 @@ const App = () => {
   }
     const handleStart = () => {
       setStart(true)   
+      setIsLoading(true)
       console.log(wordPropertiesArray)
     }
   return (
@@ -100,7 +100,6 @@ const App = () => {
               )
             : 
               <Start handleStart = {handleStart}/>
-      
     
   )
 }
