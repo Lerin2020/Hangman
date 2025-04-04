@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 
 const Letter = ({children, picked}: {children: ReactNode, picked: boolean}) => {
   return (

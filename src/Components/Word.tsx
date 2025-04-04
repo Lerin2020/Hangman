@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Letter from './Letter/Letter'
 
 interface WordProperties {
