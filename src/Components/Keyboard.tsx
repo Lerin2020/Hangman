@@ -8,8 +8,8 @@ import Button from './Button/Button'
 const Keyboard = ({handleClickAction, handleShowLetter}: {handleClickAction: (clicked: string, e:React.MouseEvent<HTMLButtonElement>) => void, handleShowLetter: (clicked: string) => void}) => {
 
   return (
-    <section className='flex flex-col gap-1 items-center'>
-    <div className=' first-row flex gap-1'>
+    <section className='flex flex-col gap-1 items-center justify-center mt-5'>
+    <div className=' first-row flex gap-1 justify-center'>
         <Button handleClickAction = {handleClickAction} handleShowLetter={handleShowLetter}>Q</Button>
         <Button handleClickAction = {handleClickAction} handleShowLetter={handleShowLetter}>W</Button>
         <Button handleClickAction = {handleClickAction} handleShowLetter={handleShowLetter}>E</Button>
@@ -22,7 +22,7 @@ const Keyboard = ({handleClickAction, handleShowLetter}: {handleClickAction: (cl
         <Button handleClickAction = {handleClickAction} handleShowLetter={handleShowLetter}>P</Button>
 
     </div>
-    <div className=' second-row flex gap-1'>
+    <div className=' second-row flex gap-1 justify-center'>
     <Button handleClickAction = {handleClickAction} handleShowLetter={handleShowLetter}>A</Button>
     <Button handleClickAction = {handleClickAction} handleShowLetter={handleShowLetter}>S</Button>
     <Button handleClickAction = {handleClickAction} handleShowLetter={handleShowLetter}>D</Button>
@@ -33,7 +33,7 @@ const Keyboard = ({handleClickAction, handleShowLetter}: {handleClickAction: (cl
     <Button handleClickAction = {handleClickAction} handleShowLetter={handleShowLetter}>K</Button>
     <Button handleClickAction = {handleClickAction} handleShowLetter={handleShowLetter}>L</Button>
     </div>
-    <div className=' second-row flex gap-1'>
+    <div className=' second-row flex gap-1 justify-center'>
     <Button handleClickAction = {handleClickAction} handleShowLetter={handleShowLetter}>Z</Button>
     <Button handleClickAction = {handleClickAction} handleShowLetter={handleShowLetter}>X</Button>
     <Button handleClickAction = {handleClickAction} handleShowLetter={handleShowLetter}>C</Button>
