@@ -91,7 +91,7 @@ const App = () => {
                             <Loading /> 
                         :
                             <div className='h-[100vh] w-[100vw] bg-[#ECEBF3] flex flex-col items-center p-15 gap-10 justify-center'>
-                              <div className='-mt-7.5 flex flex-col items-center gap-10'>
+                              <div className='-mt-10 flex flex-col items-center gap-10'>
                                 <Hangman bodyArr = {bodyArr}/>
                                 <Word wordProps = {wordPropertiesArray}/>
                                 <Keyboard handleClickAction = {handleAction} handleShowLetter={handleShowLetter}/> 
