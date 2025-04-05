@@ -104,7 +104,7 @@ const App = () => {
                         ? 
                             <Loading /> 
                         :
-                            <div className='h-[100vh] w-[100vw] flex flex-col items-center p-15 gap-10 justify-center bg-[url(../Public/sssurf.svg)] bg-right bg-no-repeat bg-cover'>
+                            <div className='h-[100vh] w-[100vw] flex flex-col items-center p-15 gap-10 justify-center bg-[url(../Public/sssurf.jpg)] bg-right bg-no-repeat bg-cover'>
                               <div className='-mt-10 flex flex-col items-center gap-10'>
                                 <Hangman bodyArr = {bodyArr}/>
                                 {!end ? <Word wordProps = {wordPropertiesArray}/>
