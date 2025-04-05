@@ -55,7 +55,6 @@ const App = () => {
       }}, [wordPropertiesArray, bodyArr, start])
 
     const handleShowLetter = (clicked: string) => {
-      console.log(wordPropertiesArray)
       setWordProperties(prevProps => 
         prevProps.map(letterObj => 
           letterObj.letter == clicked
@@ -67,7 +66,6 @@ const App = () => {
   
    const handleAction = (clicked: string, e:React.MouseEvent<HTMLButtonElement>) => {
       if(word.includes(clicked)) {
-        console.log('right choice')
         const button = e.target as HTMLButtonElement
         button.classList.add('bg-green-400')
         button.classList.add('border-green-400')
@@ -95,7 +93,7 @@ const App = () => {
     const handleStart = () => {
       setIsLoading(true)
       setStart(true)   
-      console.log(wordPropertiesArray)
+
     }
     
   return (
