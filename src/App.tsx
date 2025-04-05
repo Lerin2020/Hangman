@@ -19,6 +19,7 @@ export interface WordPropInterface {
 const App = () => {
   const [start, setStart] = useState<boolean>(false)
   const [end, setEnd] = useState<boolean>(false)
+  const [endText, setEndText] = useState<string>('')
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const abortController = useRef<AbortController | null>(null)
   const [wordPropertiesArray, setWordProperties] = useState<WordPropInterface[]>([])
@@ -45,6 +46,12 @@ const App = () => {
     useEffect(() => {
       if(start && (wordPropertiesArray.every(({picked}) => picked === true) || bodyArr.length === 0)){
         setEnd(true)
+        if(wordPropertiesArray.every(({picked}) => picked === true)) {
+          setEndText('You Win!')
+        }
+        if( bodyArr.length === 0) {
+          setEndText('You Lose!')
+        }
       }}, [wordPropertiesArray, bodyArr, start])
 
     const handleShowLetter = (clicked: string) => {
@@ -99,12 +106,12 @@ const App = () => {
                         ? 
                             <Loading /> 
                         :
-                            <div className='h-[100vh] w-[100vw] bg-[#ECEBF3] flex flex-col items-center p-15 gap-10 justify-center bg-[url(../../Public/sssurf.svg)] bg-right bg-no-repeat bg-cover'>
+                            <div className='h-[100vh] w-[100vw] flex flex-col items-center p-15 gap-10 justify-center bg-[url(../Public/sssurf.svg)] bg-right bg-no-repeat bg-cover'>
                               <div className='-mt-10 flex flex-col items-center gap-10'>
                                 <Hangman bodyArr = {bodyArr}/>
                                 {!end ? <Word wordProps = {wordPropertiesArray}/>
-                                      : <EndWord wordProps = {wordPropertiesArray}/>}
-                                <Keyboard handleClickAction = {handleAction} handleShowLetter={handleShowLetter}/> 
+                                      : <EndWord wordProps = {wordPropertiesArray} endText = {endText}/>}
+                                <Keyboard handleClickAction = {handleAction} handleShowLetter={handleShowLetter} endGame = {end}/> 
                               </div>
                             </div>
               )

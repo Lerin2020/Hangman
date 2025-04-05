@@ -4,13 +4,13 @@ interface WordProperties {
   letter: string, picked:boolean, id: number
 }
 
-const EndGame = ({wordProps}: {wordProps: WordProperties[]}) => {
+const EndGame = ({wordProps, endText}: {wordProps: WordProperties[], endText: string}) => {
   return (
     <section className='flex gap-2 flex-col items-center w-[50vw] select-none mt-5 md:w-[960px]'>
       {/* <p className='font-extrabold text-xl text-[1.5rem]'> Word </p> */}
       <div className='font-bold w-full flex justify-center items-center text-2xl'>
         {/* Hint: {wordProps[0].letter} */}
-        Refresh to play again
+        <p className={`${endText === 'You Lose!' ? "text-red-800" : "text-green-800"} mr-2.5`}>{endText}</p>   Refresh to play again
       </div>
       <div className='flex flex-row gap-2'>
        {wordProps.map((letterObj, index) => {

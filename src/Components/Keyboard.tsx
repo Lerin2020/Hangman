@@ -5,10 +5,10 @@ import Button from './Button/Button'
 //   letter: string, picked:boolean, id: number
 // }
 
-const Keyboard = ({handleClickAction, handleShowLetter}: {handleClickAction: (clicked: string, e:React.MouseEvent<HTMLButtonElement>) => void, handleShowLetter: (clicked: string) => void}) => {
+const Keyboard = ({handleClickAction, handleShowLetter, endGame}: {handleClickAction: (clicked: string, e:React.MouseEvent<HTMLButtonElement>) => void, handleShowLetter: (clicked: string) => void, endGame: boolean}) => {
 
   return (
-    <section className='flex flex-col gap-1 md:gap-2 items-center justify-center mt-2'>
+    <section className={`flex flex-col gap-1 md:gap-2 items-center justify-center mt-2 ${endGame && 'pointer-events-none'}`}>
     <div className=' first-row flex gap-1  md:gap-2 justify-center'>
         <Button handleClickAction = {handleClickAction} handleShowLetter={handleShowLetter}>Q</Button>
         <Button handleClickAction = {handleClickAction} handleShowLetter={handleShowLetter}>W</Button>
