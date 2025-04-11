@@ -25,6 +25,8 @@ const App = () => {
   const [wordPropertiesArray, setWordProperties] = useState<WordPropInterface[]>([])
   const [word, setWord] = useState<string>('')
   const [bodyArr, setBodyArr] = useState<React.ReactElement[]>([<Head key = '0'/>, <Body key = '1'/>, <LArm key='2'/>, <RArm key = '3'/>, <LLeg key = '4'/>, <RLeg key = '5'/>])
+
+  //Fetch the new word when the start button is pressed
   useEffect(() => {
     const fetchWord = async () => {
       abortController.current?.abort()
@@ -43,6 +45,8 @@ const App = () => {
       };
       fetchWord(); 
     }, [start])
+
+    //Check for winning condition on every letter chosen
     useEffect(() => {
       if(start && (wordPropertiesArray.every(({picked}) => picked === true) || bodyArr.length === 0)){
         setEnd(true)
@@ -53,7 +57,8 @@ const App = () => {
           setEndText('You Lose!')
         }
       }}, [wordPropertiesArray, bodyArr, start])
-
+    
+    //show the picked letter if it exists in the word
     const handleShowLetter = (clicked: string) => {
       setWordProperties(prevProps => 
         prevProps.map(letterObj => 
@@ -64,6 +69,9 @@ const App = () => {
       )
     }
   
+
+  //Style the button depending on whether the letter pressed is right or wrong
+
    const handleAction = (clicked: string, e:React.MouseEvent<HTMLButtonElement>) => {
       if(word.includes(clicked)) {
         const button = e.target as HTMLButtonElement
@@ -84,13 +92,16 @@ const App = () => {
         handleRemovePart()
       }
     } 
+
+  //Remove a part of the hangman when the letter chosen is wrong
   const handleRemovePart = () => {
     setBodyArr((prev: React.ReactElement[]) => {
       return prev.slice(0, -1)
     }
     )
   }
-    const handleStart = () => {
+  //Handle the loading and start states
+  const handleStart = () => {
       setIsLoading(true)
       setStart(true)   
 
